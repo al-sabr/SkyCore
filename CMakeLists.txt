@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 
 project(SkyCore)
 
+set(CMAKE_AUTOMOC TRUE)
 set(CMAKE_DEBUG_POSTFIX d)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
@@ -16,7 +17,6 @@ find_package(Qt5 COMPONENTS
 )
 set(SK_NOSCRIPT TRUE)
 
-include(macroWrapQtResources.cmake)
 include(files.cmake)
 
 set(SkyCore_TARGET_LIBRARIES)
@@ -71,17 +71,6 @@ wrapQtResources(
   
 )
 ]]
-if(QT_DEFAULT_MAJOR_VERSION VERSION_GREATER "4")
-  foreach(moc_src ${KIT_MOC_SRCS})
-    message("moc_src = ${moc_src}")
-    qt5_wrap_cpp(MY_MOC_CPP ${moc_src})
-  endforeach()
-else()
-  foreach(moc_src ${KIT_MOC_SRCS})
-    QT4_WRAP_CPP(MY_MOC_CPP ${moc_src})
-  endforeach()
-endif()
-
 
 add_library(${PROJECT_NAME} SHARED ${KIT_SRCS} ${KIT_MOC_SRCS} ${MY_MOC_CPP})
 
@@ -93,7 +82,8 @@ include_directories(
   include/3rdparty/qtsingleapplication
   include/global
   include/private
-  #include/thread
+  include/private/thread
+  include/thread
   )
 
 #target_include_directories(${PROJECT_NAME} PUBLIC include)
