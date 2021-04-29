@@ -90,6 +90,7 @@ include_directories(
   include/controllers
   include/global
   include/io
+  include/kernel
   include/network
   include/plugin
   include/thread

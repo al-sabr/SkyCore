@@ -15,6 +15,10 @@ set(CPP
 
   src/global/Sk_p.cpp
 
+  src/kernel/WCoreApplication.cpp
+  src/kernel/WCrypter.cpp
+  src/kernel/WListId.cpp
+
   src/io/WAbstractLoader.cpp
   src/io/WFileWatcher.cpp
   src/io/WLoaderNetwork.cpp
