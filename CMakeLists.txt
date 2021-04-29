@@ -6,7 +6,7 @@ set(CMAKE_AUTOMOC TRUE)
 set(CMAKE_DEBUG_POSTFIX d)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
-
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 #
 # 3rd party dependencies
 #
@@ -71,14 +71,21 @@ wrapQtResources(
   
 )
 ]]
+message("")
+message("CPP = ${CPP}")
+message("")
+message("HPP = ${HPP}")
+message("")
 
-add_library(${PROJECT_NAME} SHARED ${KIT_SRCS} ${KIT_MOC_SRCS} ${MY_MOC_CPP})
+
+add_library(${PROJECT_NAME} SHARED ${CPP} ${HPP})
 
 target_link_libraries(${PROJECT_NAME} ${SkyCore_TARGET_LIBRARIES})
 
 include_directories(
   ${PROJECT_BINARY_DIR}
   include
+  include/private
   include/3rdparty/qtsingleapplication
   include/controllers
   include/global
@@ -86,13 +93,15 @@ include_directories(
   include/network
   include/plugin
   include/thread
-  include/private
   include/private/controllers
   include/private/io
   include/private/network
   include/private/plugin
   include/private/thread
   )
+
+#set_property(SOURCE src/controllers/WControllerFile.cpp PROPERTY SKIP_AUTOMOC ON)
+#set_property(SOURCE src/controllers/WControllerFile.cpp PROPERTY SKIP_AUTOGEN ON)
 
 #target_include_directories(${PROJECT_NAME} PUBLIC include)
 #target_include_directories(${PROJECT_NAME} PRIVATE include/private)
