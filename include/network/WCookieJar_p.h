@@ -42,7 +42,7 @@
 
 #ifndef SK_NO_COOKIEJAR
 
-class SK_CORE_EXPORT WCookieJarPrivate : public WPrivate
+class SKY_CORE_EXPORT WCookieJarPrivate : public WPrivate
 {
 public:
     WCookieJarPrivate(WCookieJar * p);

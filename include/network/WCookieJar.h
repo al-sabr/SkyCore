@@ -34,7 +34,7 @@
 
 class WCookieJarPrivate;
 
-class SK_CORE_EXPORT WCookieJar : public QNetworkCookieJar, public WPrivatable
+class SKY_CORE_EXPORT WCookieJar : public QNetworkCookieJar, public WPrivatable
 {
     Q_OBJECT
 

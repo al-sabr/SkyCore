@@ -83,11 +83,13 @@ include_directories(
   include/controllers
   include/global
   include/io
+  include/network
   include/plugin
   include/thread
   include/private
   include/private/controllers
   include/private/io
+  include/private/network
   include/private/plugin
   include/private/thread
   )
