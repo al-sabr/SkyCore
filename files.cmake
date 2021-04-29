@@ -23,6 +23,10 @@ set(CPP
   src/io/WAbstractLoader.cpp
   src/io/WFileWatcher.cpp
   src/io/WLoaderNetwork.cpp
+  src/io/WCache.cpp
+  src/io/WLocalObject.cpp
+  src/io/WUnzipper.cpp
+  src/io/WYamlReader.cpp
 
   src/network/WCookieJar.cpp
 
@@ -94,6 +98,9 @@ set( HPP
   include/io/WLoaderNetwork
   include/io/WLoaderNetwork.h
   include/io/WLoaderNetwork_p.h
+  include/io/WCache
+  include/io/WCache_p.h
+  include/io/WCache.h
 
   include/network/WCookieJar
   include/network/WCookieJar.h
