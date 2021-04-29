@@ -101,13 +101,13 @@ include_directories(
   include/private/thread
   )
 
-#set_property(SOURCE src/controllers/WControllerFile.cpp PROPERTY SKIP_AUTOMOC ON)
+set_property(SOURCE WControllerFile.moc PROPERTY SKIP_AUTOMOC ON)
 #set_property(SOURCE src/controllers/WControllerFile.cpp PROPERTY SKIP_AUTOGEN ON)
 
 #target_include_directories(${PROJECT_NAME} PUBLIC include)
 #target_include_directories(${PROJECT_NAME} PRIVATE include/private)
 
-add_definitions(-DQT_${QT_DEFAULT_MAJOR_VERSION} -DQT_LATEST -DSK_NO_SCRIPT -DSK_NO_CONTROLLERFILE)
+add_definitions(-DQT_${QT_DEFAULT_MAJOR_VERSION} -DQT_LATEST -DSK_NO_SCRIPT ) #-DSK_NO_CONTROLLERFILE -DSK_NO_CACHE
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
 
