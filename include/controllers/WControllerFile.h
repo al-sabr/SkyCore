@@ -45,7 +45,7 @@ class WCache;
 class WCacheFile;
 
 // Defines
-#define wControllerFile WControllerFile::instance()
+//#define wControllerFile WControllerFile::instance()
 
 //=================================================================================================
 // WControllerFileAction

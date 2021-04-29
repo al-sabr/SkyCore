@@ -322,7 +322,7 @@ QString WCookieJarPrivate::getPath()
 {
     if (path.isEmpty())
     {
-         return WControllerFile::pathWritable();
+        return ""; // WControllerFile::pathWritable();
     }
     else return path;
 }

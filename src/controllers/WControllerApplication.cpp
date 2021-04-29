@@ -241,7 +241,7 @@ void WControllerApplicationPrivate::initApplication(QCoreApplication * applicati
     //---------------------------------------------------------------------------------------------
     // Controllers - declaration order matters
 
-    W_CREATE_CONTROLLER(WControllerFile);
+    //W_CREATE_CONTROLLER(WControllerFile);
     W_CREATE_CONTROLLER(WControllerNetwork);
     W_CREATE_CONTROLLER(WControllerDownload);
     W_CREATE_CONTROLLER(WControllerXml);
@@ -268,9 +268,9 @@ void WControllerApplicationPrivate::onAboutToQuit()
 
     emit q->aboutToQuit();
 
-    wControllerFile->waitActions();
+    //wControllerFile->waitActions();
 
-    wControllerFile->d_func()->clearMessageHandler();
+    //wControllerFile->d_func()->clearMessageHandler();
 
     if (object)
     {
@@ -595,7 +595,7 @@ Qt::KeyboardModifiers WControllerApplication::keypad(Qt::KeyboardModifiers flags
 
 /* Q_INVOKABLE static */ bool WControllerApplication::fileExists(const QString & fileName)
 {
-    return WControllerFile::exists(fileName);
+    return false;//WControllerFile::exists(fileName);
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -609,6 +609,7 @@ Qt::KeyboardModifiers WControllerApplication::keypad(Qt::KeyboardModifiers flags
     QString path = QCoreApplication::applicationDirPath() + "/setup";
 #endif
 
+    /*
     if (WControllerFile::tryAppend(WControllerFile::fileUrl(path)))
     {
         if (QProcess::startDetached(quote(path), QStringList("--updater")) == false)
@@ -620,8 +621,10 @@ Qt::KeyboardModifiers WControllerApplication::keypad(Qt::KeyboardModifiers flags
     {
         return false;
     }
+    */
 
     return true;
+    
 }
 
 /* Q_INVOKABLE static */ bool WControllerApplication::runAdmin(const QString & fileName,

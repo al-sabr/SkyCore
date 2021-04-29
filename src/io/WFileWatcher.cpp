@@ -510,14 +510,14 @@ int WFolderWatch::getFolderIndex(const QString & path) const
 
 WFileWatcherPrivate::WFileWatcherPrivate(WFileWatcher * p) : WPrivate(p)
 {
-    wControllerFile->d_func()->registerFileWatcher(p);
+    //wControllerFile->d_func()->registerFileWatcher(p);
 }
 
 WFileWatcherPrivate::~WFileWatcherPrivate()
 {
     Q_Q(WFileWatcher);
 
-    wControllerFile->d_func()->unregisterFileWatcher(q);
+    //wControllerFile->d_func()->unregisterFileWatcher(q);
 }
 
 //-------------------------------------------------------------------------------------------------
