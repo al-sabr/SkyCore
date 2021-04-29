@@ -82,9 +82,11 @@ include_directories(
   include/3rdparty/qtsingleapplication
   include/controllers
   include/global
+  include/plugin
   include/thread
   include/private
   include/private/controllers
+  include/private/plugin
   include/private/thread
   )
 
