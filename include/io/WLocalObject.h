@@ -28,6 +28,7 @@
 
 // Sk includes
 #include <WAbstractThreadReply>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_LOCALOBJECT
 

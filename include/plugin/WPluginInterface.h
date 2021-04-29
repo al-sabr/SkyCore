@@ -24,6 +24,7 @@
 #define WPLUGININTERFACE_H
 
 #include <Sk>
+#include <SkyCoreExports.h>
 
 class SKY_CORE_EXPORT WPluginInterface
 {

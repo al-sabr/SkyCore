@@ -39,6 +39,7 @@
 
 // Private includes
 #include <private/controllers/WController_p>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_CONTROLLERNETWORK
 

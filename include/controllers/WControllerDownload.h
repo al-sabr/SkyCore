@@ -28,6 +28,7 @@
 
 // Sk includes
 #include <WController.h>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_CONTROLLERDOWNLOAD
 

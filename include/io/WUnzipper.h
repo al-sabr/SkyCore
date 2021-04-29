@@ -32,6 +32,7 @@
 
 // Sk includes
 #include <Sk>
+#include <SkyCoreExports.h>
 
 // Forward declarations
 class QBuffer;

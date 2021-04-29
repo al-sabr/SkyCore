@@ -34,6 +34,7 @@
 */
 
 #include <private/io/WAbstractLoader_p>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_LOADERNETWORK
 

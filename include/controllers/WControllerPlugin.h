@@ -26,6 +26,7 @@
 // Sk includes
 #include <WController>
 #include <WPlugin>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_CONTROLLERPLUGIN
 

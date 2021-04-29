@@ -25,6 +25,7 @@
 
 // Sk includes
 #include <WControllerApplication>
+#include <SkyCoreExports.h>
 
 class WCrypterPrivate;
 

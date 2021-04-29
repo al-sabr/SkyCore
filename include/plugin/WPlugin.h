@@ -28,6 +28,7 @@
 
 // Sk includes
 #include <WPluginInterface.h>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_PLUGIN
 

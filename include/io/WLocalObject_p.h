@@ -38,6 +38,7 @@
 
 // Private includes
 #include <private/Sk_p>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_LOCALOBJECT
 

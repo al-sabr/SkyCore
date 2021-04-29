@@ -34,6 +34,7 @@
 */
 
 #include <private/Sk_p>
+#include <SkyCoreExports.h>
 
 class SKY_CORE_EXPORT WControllerPrivate : public WPrivate
 {

@@ -29,6 +29,7 @@
 
 // Sk includes
 #include <Sk>
+#include <SkyCoreExports.h>
 
 #ifndef SK_NO_COOKIEJAR
 

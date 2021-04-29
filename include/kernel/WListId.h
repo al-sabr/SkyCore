@@ -28,6 +28,7 @@
 
 // Sk includes
 #include <Sk>
+#include <SkyCoreExports.h>
 
 class SKY_CORE_EXPORT WListId
 {
