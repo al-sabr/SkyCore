@@ -50,6 +50,9 @@
 #include <WCache>
 #include <WThreadActions>
 
+#include <WControllerFileAction>
+#include <WControllerFileReply>
+
 // Private includes
 #include <private/io/WFileWatcher_p>
 
@@ -65,25 +68,8 @@ static const int CONTROLLERFILE_LOG_INTERVAL =  1000; // 1 seconds
 static const int CONTROLLERFILE_LOG_MAX      = 10000;
 
 //=================================================================================================
-// WControllerFileAction
-//=================================================================================================
-
-/* virtual */ WAbstractThreadReply * WControllerFileAction::createReply() const
-{
-    return new WControllerFileReply;
-}
-
-//-------------------------------------------------------------------------------------------------
-
-WControllerFileReply * WControllerFileAction::controllerReply()
-{
-    return qobject_cast<WControllerFileReply *> (reply());
-}
-
-//=================================================================================================
 // WControllerFileWrite
 //=================================================================================================
-
 class WControllerFileWrite : public WControllerFileAction
 {
     Q_OBJECT

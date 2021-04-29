@@ -6,6 +6,7 @@ set(CPP
   src/controllers/WControllerDeclarative.cpp
   src/controllers/WControllerDownload.cpp
   src/controllers/WControllerFile.cpp
+  src/controllers/WControllerFileAction.cpp
   src/controllers/WControllerNetwork.cpp
 
   src/controllers/WControllerPlugin.cpp
@@ -49,6 +50,10 @@ set( HPP
   include/controllers/WControllerFile
   include/controllers/WControllerFile.h
   include/controllers/WControllerFile_p.h
+  include/controllers/WControllerFileAction
+  include/controllers/WControllerFileAction.h
+  include/controllers/WControllerFileReply
+  include/controllers/WControllerFileReply.h
   include/controllers/WControllerNetwork
   include/controllers/WControllerNetwork.h
   include/controllers/WControllerNetwork_p.h
