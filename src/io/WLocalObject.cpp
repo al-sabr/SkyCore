@@ -49,7 +49,7 @@ WLocalObjectPrivate::WLocalObjectPrivate(WLocalObject * p) : WPrivate(p) {}
         qWarning("WLocalObjectPrivate::~WLocalObjectPrivate: Object is still loading.");
     }
 
-    W_GET_CONTROLLER(WControllerFile, controller);
+    /*W_GET_CONTROLLER(WControllerFile, controller);
 
     if (controller)
     {
@@ -57,6 +57,7 @@ WLocalObjectPrivate::WLocalObjectPrivate(WLocalObject * p) : WPrivate(p) {}
 
         controller->d_func()->unregisterLocalObject(q);
     }
+    */
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -92,7 +93,7 @@ void WLocalObjectPrivate::init()
 
     QObject::connect(&timer, SIGNAL(timeout()), q, SLOT(onSaveTimeout()));
 
-    wControllerFile->d_func()->registerLocalObject(q);
+    //wControllerFile->d_func()->registerLocalObject(q);
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -170,7 +171,7 @@ void WLocalObjectPrivate::setLoaded(bool ok)
 bool WLocalObjectPrivate::startSave(bool instant)
 {
     Q_Q(WLocalObject);
-
+    /*
     actionSave = q->onSave(q->getFilePath());
 
     if (actionSave == NULL)
@@ -179,18 +180,18 @@ bool WLocalObjectPrivate::startSave(bool instant)
 
         return false;
     }
-
+    */
     q->createPath();
 
     createFolder();
-
+    /*
     if (instant)
     {
         actionSave->start();
     }
     else wControllerFile->startWriteAction(actionSave);
 
-    /*if (instant == false)
+    if (instant == false)
     {
         if (wControllerFile->startWriteAction(actionSave) == NULL)
         {
@@ -406,11 +407,13 @@ WLocalObject::WLocalObject(WLocalObjectPrivate * p, QObject * parent)
 
     if (QFile::exists(path) == false) return;
 
+    /*
     if (instant)
     {
          WControllerFile::deleteFile(path);
     }
     else wControllerFile->startDeleteFile(path);
+    */
 
     d->pathCreated = false;
 
@@ -425,11 +428,13 @@ WLocalObject::WLocalObject(WLocalObjectPrivate * p, QObject * parent)
 
     if (QFile::exists(path) == false) return;
 
+    /*
     if (instant)
     {
          WControllerFile::deleteFolder(path);
     }
     else wControllerFile->startDeleteFolder(path);
+    */
 
     d->folderCreated = false;
 
@@ -551,6 +556,7 @@ WLocalObject::WLocalObject(WLocalObjectPrivate * p, QObject * parent)
 {
     Q_D(WLocalObject);
 
+    /*
     if (d->state != Default || d->saving) return false;
 
     QString path = getFilePath();
@@ -585,7 +591,7 @@ WLocalObject::WLocalObject(WLocalObjectPrivate * p, QObject * parent)
     }
     else wControllerFile->startReadAction(d->actionLoad);
 
-    /*else if (wControllerFile->startReadAction(d->actionLoad) == NULL)
+    else if (wControllerFile->startReadAction(d->actionLoad) == NULL)
     {
         qWarning("WLocalObject::load: Failed to start load.");
 
@@ -630,7 +636,7 @@ WLocalObject::WLocalObject(WLocalObjectPrivate * p, QObject * parent)
 
 /* Q_INVOKABLE virtual */ QString WLocalObject::getParentPath() const
 {
-    return wControllerFile->pathStorage();
+    return ""; // wControllerFile->pathStorage();
 }
 
 //-------------------------------------------------------------------------------------------------

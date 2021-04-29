@@ -25,9 +25,8 @@
 #ifndef SK_NO_CACHE
 
 // Sk includes
-#include <WControllerFile>
-#include <WControllerFileAction>
 #include <WControllerNetwork>
+#include <WControllerFile>
 #include <WListId>
 
 // Qt includes
@@ -38,6 +37,7 @@
 #include <QDir>
 #include <QDataStream>
 
+class WControllerFile;
 //-------------------------------------------------------------------------------------------------
 // Static variables
 
@@ -368,7 +368,7 @@ public: // Variables
 {
     foreach (const QString & url, urls)
     {
-        WControllerFile::deleteFile(url);
+        //WControllerFile::deleteFile(url);
     }
 
     return true;
@@ -1050,7 +1050,7 @@ void WCacheThread::addData(int id,
 
 void WCacheThread::clearFolder()
 {
-    WControllerFile::deleteFolderContent(path, false);
+    //WControllerFile::deleteFolderContent(path, false);
 
     size = 0;
 
@@ -1894,7 +1894,7 @@ WCache::WCache(const QString & path, qint64 sizeMax, QObject * parent)
 
         action->urls = urlsCache;
 
-        wControllerFile->startReadAction(action);
+        //wControllerFile->startReadAction(action);
 
         return true;
     }
