@@ -29,7 +29,7 @@
 #include <QMetaMethod>
 
 // Private includes
-#include <private/WController_p>
+#include <private/controllers/WController_p>
 
 #ifndef SK_NO_CONTROLLERFILE
 
@@ -38,7 +38,7 @@ class WFileWatcher;
 class WLocalObject;
 class WThreadActions;
 
-class SK_CORE_EXPORT WControllerFilePrivate : public WControllerPrivate
+class SKY_CORE_EXPORT WControllerFilePrivate : public WControllerPrivate
 {
 public:
     WControllerFilePrivate(WControllerFile * p);

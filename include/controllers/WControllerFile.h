@@ -51,7 +51,7 @@ class WCacheFile;
 // WControllerFileAction
 //=================================================================================================
 
-class SK_CORE_EXPORT WControllerFileAction : public WAbstractThreadAction
+class SKY_CORE_EXPORT WControllerFileAction : public WAbstractThreadAction
 {
     Q_OBJECT
 
@@ -66,7 +66,7 @@ public: // Properties
 // WControllerFileReply
 //=================================================================================================
 
-class SK_CORE_EXPORT WControllerFileReply : public WAbstractThreadReply
+class SKY_CORE_EXPORT WControllerFileReply : public WAbstractThreadReply
 {
     Q_OBJECT
 
@@ -89,7 +89,7 @@ private:
 // WControllerFile
 //=================================================================================================
 
-class SK_CORE_EXPORT WControllerFile : public WController
+class SKY_CORE_EXPORT WControllerFile : public WController
 {
     Q_OBJECT
 
@@ -302,7 +302,7 @@ private:
     friend class WLocalObjectPrivate;
 };
 
-#include <private/WControllerFile_p>
+#include <private/controllers/WControllerFile_p>
 
 #endif // SK_NO_CONTROLLERFILE
 #endif // WCONTROLLERFILE_H

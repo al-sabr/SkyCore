@@ -80,11 +80,12 @@ include_directories(
   ${PROJECT_BINARY_DIR}
   include
   include/3rdparty/qtsingleapplication
+  include/controllers
   include/global
-  include/private
-  include/network
-  include/private/thread
   include/thread
+  include/private
+  include/private/controllers
+  include/private/thread
   )
 
 #target_include_directories(${PROJECT_NAME} PUBLIC include)
