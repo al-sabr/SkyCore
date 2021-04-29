@@ -1,1 +1,1 @@
-#include "../../thread/WAbstractThreadReply_p.h"
+#include "WAbstractThreadReply_p.h"
