@@ -93,7 +93,7 @@ include_directories(
   include/3rdparty/qtsingleapplication
   include/global
   include/private
-  #include/thread
+  include/network
   )
 
 #target_include_directories(${PROJECT_NAME} PUBLIC include)
