@@ -29,15 +29,18 @@
 
 // Sk includes
 #include <WController>
+#include <WAbstractThreadAction>
+#include <WAbstractThreadReply>
 #include <SkyCoreExports.h>
+#include <3rdparty/qtsingleapplication/qtlockedfile.h>
 
 #ifndef SK_NO_CONTROLLERFILE
 
 // Forward declarations
-namespace QtLP_Private
-{
-    class QtLockedFile;
-};
+//namespace QtLP_Private
+//{
+//    class QtLockedFile;
+//};
 class WControllerFilePrivate;
 class WControllerFileReply;
 class WCache;
@@ -50,7 +53,7 @@ class WCacheFile;
 // WControllerFileAction
 //=================================================================================================
 
-class SK_CORE_EXPORT WControllerFileAction : public WAbstractThreadAction
+class SKY_CORE_EXPORT WControllerFileAction : public WAbstractThreadAction
 {
     Q_OBJECT
 
@@ -65,7 +68,7 @@ public: // Properties
 // WControllerFileReply
 //=================================================================================================
 
-class SK_CORE_EXPORT WControllerFileReply : public WAbstractThreadReply
+class SKY_CORE_EXPORT WControllerFileReply : public WAbstractThreadReply
 {
     Q_OBJECT
 
@@ -233,7 +236,7 @@ public: // Static functions
     //---------------------------------------------------------------------------------------------
     // Files
 
-    static bool tryUnlock(const QtLP_Private::QtLockedFile & file,
+    static bool tryUnlock(const QtLockedFile & file,
                           int                                timeout = 10000); // 10 seconds
 
     static QByteArray readFile(const QString & fileName);
